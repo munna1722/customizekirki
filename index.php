@@ -9,18 +9,30 @@
 <body <?php body_class(); ?>>
 
 <header>
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-    <p><?php bloginfo( 'description' ); ?></p>
+  
     <nav>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
+    
 </header>
 
 <main>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article>
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <div><?php the_content(); ?></div>
+           <div class="header-section-one" >
+               <h2><?php echo get_theme_mod('text_setting'); ?></h2>
+               
+               <p><?php echo get_theme_mod('textarea_setting');?></p>
+
+              <a href="<?php echo the_permalink( ); ?>">Click More</a>
+
+           </div>
+
+           <div class="header-section-two">
+              <div class="image_area">
+                  <img src="<?php echo get_template_directory_uri(  ); ?>/img/cusomizekirki.jpg">
+              </div>
+           </div>
         </article>
     <?php endwhile; else : ?>
         <p>No content available.</p>

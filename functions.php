@@ -19,37 +19,12 @@ function customizekirki_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'customizekirki_enqueue_assets' );
 
+
+
+//theme customize all 
+include_once('inc/kirki-framwork.php');
+
+
+
+
 // Kirki Customizer Integration
-if ( class_exists( 'Kirki' ) ) {
-    Kirki::add_config( 'customizekirki_config', array(
-        'capability'  => 'edit_theme_options',
-        'option_type' => 'theme_mod',
-    ) );
-
-    Kirki::add_panel( 'custom_panel', array(
-        'priority'    => 10,
-        'title'       => __( 'Theme Customization', 'customizekirki' ),
-        'description' => __( 'Customize your theme settings.', 'customizekirki' ),
-    ) );
-
-    Kirki::add_section( 'custom_colors', array(
-        'title'    => __( 'Colors', 'customizekirki' ),
-        'panel'    => 'custom_panel',
-        'priority' => 160,
-    ) );
-
-    Kirki::add_field( 'customizekirki_config', [
-        'type'        => 'color',
-        'settings'    => 'primary_color',
-        'label'       => __( 'Primary Color', 'customizekirki' ),
-        'section'     => 'custom_colors',
-        'default'     => '#ff0000',
-        'transport'   => 'refresh',
-        'output'      => [
-            [
-                'element'  => 'body, a',
-                'property' => 'color',
-            ],
-        ],
-    ] );
-}
