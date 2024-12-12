@@ -29,8 +29,13 @@
            </div>
 
            <div class="header-section-two">
-              <div class="image_area">
-                  <img src="<?php echo get_template_directory_uri(  ); ?>/img/cusomizekirki.jpg">
+              <div class="image_area" style="text-align:center">
+
+              <?php $image = get_theme_mod('image_setting_url', ''); ?>
+                    <div style="background-image: url('<?php echo esc_url($image); ?>'); width: 300px; height: 200px; background-size: cover; background-repeat: no-repeat;">
+                        <h1>Hello this is</h1>
+                    </div>
+                           
               </div>
            </div>
         </article>
