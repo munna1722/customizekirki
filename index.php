@@ -20,9 +20,10 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article>
            <div class="header-section-one" >
-               <h2><?php echo get_theme_mod('text_setting'); ?></h2>
+               <h2  style="color:<?php echo get_theme_mod( 'color_setting_rgba'); ?>"><?php echo get_theme_mod('text_setting'); ?></h2>
                
-               <p><?php echo get_theme_mod('textarea_setting');?></p>
+               <p style="color:<?php echo get_theme_mod( 'description', '#0008DC' ); ?>"><?php echo get_theme_mod( 'textarea_setting' ); ?></p>
+
 
               <a href="<?php echo the_permalink( ); ?>">Click More</a>
 
